@@ -1,18 +1,47 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="source.css" media="screen">
-    <title>OLa</title>
+    <link rel="stylesheet" href="styles.css">
+    <title>Tecnologias Desconhecidas</title>
 </head>
 <body>
-    <h1 id="titulo-principal">Nenem Está</h1>
-    <p class="paragrafo-vintage red">Anna Keicy Damasceno</p>
-    <p class="paragrafo-style verde">O amor de minha vida</p>
-    <p class="paragrafo-vintage">20 anos de idade</p>
-    <p class="paragrafo-style">Catu-BA</p>
-    <button onclick="titulo()">Estado Civil</button>
-    <script type="text/javascript" src="source.js"></script>
+    <header>
+        <h1>Tecnologias Desconhecidas</h1>
+    </header>
+    <main>
+    <section>
+        <input type="text" placeholder="Digite sua busca aqui">
+        <button>Pesquisar</button>
+    </section>
+    <section class="resultados-pesquisa">
+        <div class="item-resultado">
+            <h2>Computação Quântica</h2>
+            <p class="descricao-meta">A computação quântica é um campo da ciência que explora as leis da física quântica para criar computadores muito mais poderosos que os atuais. Utilizando qubits, que podem representar múltiplos estados ao mesmo tempo, esses computadores podem resolver problemas complexos de forma muito mais rápida, com aplicações promissoras em diversas áreas, como medicina, materiais e inteligência artificial.</p>
+            <a href="https://aws.amazon.com/pt/what-is/quantum-computing/"target="_blank">Mais Informações</a>
+            </div>
+
+        <div class="item-resultado">
+            <h2>Inteligência Artificial Geral (AGI)</h2>
+            <p class="descricao-meta">A Inteligência Artificial Geral (AGI) representa um marco hipotético na evolução da inteligência artificial, onde máquinas poderiam compreender, aprender e aplicar conhecimento em qualquer tarefa intelectual que um ser humano possa. É como criar uma mente artificial com capacidades cognitivas semelhantes às nossas. A AGI ainda é um conceito futuro e um grande desafio para a ciência, com implicações profundas para a sociedade, tanto positivas quanto negativas. As pesquisas nessa área buscam entender como a inteligência humana funciona e como reproduzir essas capacidades em máquinas.</p>
+            <a href="https://canaltech.com.br/inteligencia-artificial/agi-o-que-e-inteligencia-artificial-geral/"target="_blank">Mais Informações</a>
+            </div>
+        
+        <div class="item-resultado">
+            <h2>Neurotecnologia</h2>
+            <p class="descricao-meta">A neurotecnologia é um campo interdisciplinar que busca entender e interagir com o sistema nervoso, principalmente o cérebro. Através de diversas ferramentas e técnicas, como a imagem por ressonância magnética e a estimulação cerebral profunda, a neurotecnologia permite estudar o funcionamento do cérebro, diagnosticar e tratar doenças neurológicas, e até mesmo desenvolver interfaces cérebro-computador. Essa área promissora oferece um grande potencial para revolucionar a medicina, a psicologia e a nossa compreensão da mente humana.</p>
+            <a href="https://www.iberdrola.com/inovacao/neurotecnologia"target="_blank">Mais Informações</a>
+            </div>
+
+    </section>
+    </main>
+    <footer>
+        <p>2024 - Tecnologias Desconhecidas. Todos os direitos reservados.</p>
+        <p>Entre em contato pelo celular: 71999999999</p>
+    </footer>
+    <script src="dados.js"></script>
+    <script src="app.js"></script>
+
 </body>
 </html>
