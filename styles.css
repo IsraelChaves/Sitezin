@@ -27,6 +27,8 @@ h1 {
     color: #f4f6f8; /* Cor do texto */
     text-align: center; /* Alinha o texto ao centro */
     letter-spacing: 0.4rem; /* Espaçamento entre letras */
+    font-family: 'Exo 2', sans-serif ; /* Usando a categoria Fantasy */
+
 }
 
 /* Estiliza as seções da página */
@@ -50,15 +52,34 @@ section input {
 }
 
 /* Estiliza os botões dentro das seções */
-section button {
-    padding: 0.8rem 1.2rem; /* Espaçamento interno do botão */
-    border: none; /* Remove a borda padrão */
-    border-radius: 1.5rem; /* Borda arredondada */
-    background-color: #30475E; /* Cor de fundo do botão */
-    color: #F5F7F8; /* Cor do texto do botão */
-    font-size: 1rem; /* Tamanho da fonte */
-    cursor: pointer; /* Muda o cursor para indicar que é clicável */
+/* Estilo exclusivo para o botão de pesquisa */
+.botao-pesquisa {
+    padding: 1.3em 3em;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    font-weight: 500;
+    color: #000;
+    background-color: #fff;
+    border: none;
+    border-radius: 45px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+    outline: none;
 }
+
+.botao-pesquisa:hover {
+    background-color: #23c483;
+    box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+    color: #fff;
+    transform: translateY(-7px);
+}
+
+.botao-pesquisa:active {
+    transform: translateY(-1px);
+}
+
 
 /* Estiliza a caixa de resultados da pesquisa */
 .resultados-pesquisa {
@@ -104,7 +125,7 @@ section button {
 
 /* Estiliza o rodapé da página */
 footer {
-    background-color: #F5F7F8; /* Cor de fundo do rodapé */
+    background-color: #e0e6f0; /* Cor de fundo do rodapé */
     color: #45474B; /* Cor do texto */
     text-align: center; /* Alinha o texto ao centro */
     padding: 0; /* Espaçamento interno */
@@ -112,4 +133,28 @@ footer {
     position: absolute; /* Posiciona o rodapé */
     bottom: 0; /* Alinha ao fundo da página */
     font-size: 1rem; /* Tamanho da fonte */
+}
+
+/* Botão de rolagem */
+.botao-rolagem {
+    position: fixed; /* Mantém o botão fixo na tela */
+    bottom: 20px; /* Distância da parte inferior */
+    right: 20px; /* Distância da lateral direita */
+    width: 50px; /* Largura */
+    height: 50px; /* Altura */
+    background-color: #30475E; /* Cor de fundo */
+    color: #fff; /* Cor do ícone/texto */
+    border: none; /* Remove bordas */
+    border-radius: 50%; /* Forma circular */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Sombra */
+    cursor: pointer; /* Indica clicável */
+    font-size: 24px; /* Tamanho do ícone/texto */
+    display: none; /* Esconde o botão inicialmente */
+    z-index: 100; /* Fica acima de outros elementos */
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.botao-rolagem:hover {
+    background-color: #23c483; /* Cor ao passar o mouse */
+    transform: scale(1.1); /* Leve aumento no hover */
 }
