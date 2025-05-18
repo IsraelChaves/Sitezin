@@ -1,158 +1,311 @@
-/* Importa a fonte Chakra Petch do Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;700&family=Exo+2:wght@400;700&display=swap');
 
-/* Estiliza o corpo da página com uma imagem de fundo */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
-    font-family: "Chakra Petch", sans-serif; /* Define a fonte padrão */
-    background-image: url('imagens/fundo-sitezin.jpeg'); /* Caminho correto para a imagem de fundo */
-    background-size: cover; /* Ajusta o tamanho da imagem para cobrir toda a área */
-    background-position: center; /* Centraliza a imagem */
-    background-attachment: fixed; /* Faz com que a imagem fique fixa ao rolar a página */
-    background-color: #DDDDDD; /* Cor de fundo secundária caso a imagem não carregue */
-    display: flex; /* Usa Flexbox para layout */
-    flex-direction: column; /* Alinha os itens na vertical */
-    align-items: center; /* Centraliza os itens horizontalmente */
-    justify-content: center; /* Centraliza os itens verticalmente */
-    height: 100vh; /* Preenche a altura total da viewport */
-    margin: 0;
-    padding: 0;
+  font-family: 'Chakra Petch', sans-serif;
+  background-image: linear-gradient(135deg, #0A0F24 0%, #1A2744 100%);
+  color: #E6E6FA;
+  line-height: 1.6;
+  overflow-x: hidden;
 }
 
-/* Restante do código*/
-
-
-/* Estiliza os títulos h1 */
-h1 {
-    font-size: 2.5rem; /* Tamanho da fonte */
-    color: #f4f6f8; /* Cor do texto */
-    text-align: center; /* Alinha o texto ao centro */
-    letter-spacing: 0.4rem; /* Espaçamento entre letras */
-    font-family: 'Exo 2', sans-serif ; /* Usando a categoria Fantasy */
-
+/* Navbar */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(10, 15, 36, 0.9);
+  backdrop-filter: blur(10px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  z-index: 1000;
 }
 
-/* Estiliza as seções da página */
-section {
-    display: flex; /* Usa Flexbox para layout */
-    flex-direction: column; /* Alinha os itens na vertical */
-    align-items: center; /* Centraliza os itens horizontalmente */
-    margin-bottom: 3rem; /* Espaçamento abaixo de cada seção */
+.navbar .logo {
+  font-family: 'Exo 2', sans-serif;
+  font-size: 1.5rem;
+  color: #00D4FF;
 }
 
-/* Estiliza os inputs dentro das seções */
-section input {
-    width: 30rem; /* Largura dos inputs */
-    border: none; /* Remove a borda padrão */
-    padding: 1rem; /* Espaçamento interno */
-    border-radius: 1.5rem; /* Borda arredondada */
-    margin-bottom: 1rem; /* Espaçamento abaixo dos inputs */
-    color: #45474B; /* Cor do texto */
-    font-size: 1rem; /* Tamanho da fonte */
-    box-sizing: border-box; /* Inclui padding e border na largura total */
+.nav-links {
+  display: flex;
+  list-style: none;
 }
 
-/* Estiliza os botões dentro das seções */
-/* Estilo exclusivo para o botão de pesquisa */
+.nav-links li {
+  margin-left: 2rem;
+}
+
+.nav-links a {
+  color: #E6E6FA;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #00D4FF;
+}
+
+.menu-toggle {
+  display: none;
+  font-size: 1.5rem;
+  color: #E6E6FA;
+  cursor: pointer;
+}
+
+/* Header */
+header {
+  text-align: center;
+  padding: 5rem 2rem;
+  background: linear-gradient(135deg, #00D4FF 0%, #FF00E4 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+  margin-bottom: 2rem;
+}
+
+header h1 {
+  font-family: 'Exo 2', sans-serif;
+  font-size: 3rem;
+  color: #E6E6FA;
+  letter-spacing: 0.2rem;
+  animation: fadeIn 1s ease-in;
+}
+
+header p {
+  font-size: 1.2rem;
+  color: #E6E6FA;
+  margin-top: 0.5rem;
+}
+
+/* Formulário de pesquisa */
+.form-pesquisa {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.input-wrapper {
+  position: relative;
+  width: 20rem;
+}
+
+.form-pesquisa input {
+  width: 100%;
+  padding: 1rem 1rem 1rem 2.5rem;
+  border: 2px solid #00D4FF;
+  border-radius: 2rem;
+  background: rgba(255, 255, 255, 0.1);
+  color: #E6E6FA;
+  font-size: 1rem;
+}
+
+.form-pesquisa input:focus {
+  outline: none;
+  border-color: #FF00E4;
+  box-shadow: 0 0 10px rgba(255, 0, 228, 0.5);
+}
+
+.search-icon {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #00D4FF;
+}
+
 .botao-pesquisa {
-    padding: 1.3em 3em;
-    font-size: 12px;
-    text-transform: uppercase;
-    letter-spacing: 2.5px;
-    font-weight: 500;
-    color: #000;
-    background-color: #4c739f;
-    border: none;
-    border-radius: 45px;
-    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease 0s;
-    cursor: pointer;
-    outline: none;
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 500;
+  color: #E6E6FA;
+  background: #00D4FF;
+  border: none;
+  border-radius: 2rem;
+  box-shadow: 0 4px 15px rgba(0, 212, 255, 0.3);
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
 .botao-pesquisa:hover {
-    background-color: #23c483;
-    box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
-    color: #fff;
-    transform: translateY(-7px);
+  background: #FF00E4;
+  transform: translateY(-3px);
 }
 
-.botao-pesquisa:active {
-    transform: translateY(-1px);
-}
-
-
-/* Estiliza a caixa de resultados da pesquisa */
+/* Seção de resultados */
 .resultados-pesquisa {
-    width: 60rem; /* Largura máxima da caixa de resultados */
-    height: 46vh; /* Altura máxima da caixa de resultados */
-    overflow-y: auto; /* Adiciona rolagem vertical se necessário */
-    margin-top: 1rem; /* Espaçamento acima da caixa de resultados */
-    padding: 1rem; /* Espaçamento interno */
-    border-radius: 0.6rem; /* Borda arredondada */
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
 }
 
-/* Estiliza cada item de resultado */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
 .item-resultado {
-    background: #FFFFFF; /* Cor de fundo dos itens */
-    border-radius: 0.6rem; /* Borda arredondada */
-    padding: 1rem; /* Espaçamento interno */
-    margin-bottom: 1rem; /* Espaçamento abaixo dos itens */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra leve */
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid #00D4FF;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: slideUp 0.5s ease forwards;
 }
 
-/* Estiliza os títulos dentro dos itens de resultado */
+.item-resultado:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0, 212, 255, 0.3);
+}
+
+.imagem-topico {
+  width: 100%;
+  max-width: 200px;
+  height: auto;
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+}
+
 .item-resultado h2 {
-    font-size: 1.5rem; /* Tamanho da fonte */
-    color: #222831; /* Cor do texto */
+  font-size: 1.8rem;
+  color: #00D4FF;
+  margin-bottom: 0.5rem;
 }
 
-/* Estiliza os links dentro dos itens de resultado */
-.item-resultado a {
-    text-decoration: none; /* Remove o sublinhado padrão dos links */
-    color: #30475E; /* Cor do texto dos links */
-}
-
-/* Estiliza os links quando são passados o mouse sobre */
-.item-resultado a:hover {
-    text-decoration: underline; /* Adiciona sublinhado ao passar o mouse */
-}
-
-/* Estiliza a descrição meta dentro dos itens de resultado */
 .descricao-meta {
-    color: #45474B; /* Cor do texto */
-    margin: 0.5rem 0; /* Margem acima e abaixo */
+  color: #E6E6FA;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.item-resultado a {
+  color: #FF00E4;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.item-resultado a:hover {
+  color: #00D4FF;
+  text-decoration: underline;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 2rem;
+  background: rgba(10, 15, 36, 0.9);
+  color: #E6E6FA;
+}
+
+.social-links a {
+  color: #00D4FF;
+  margin: 0 1rem;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+  color: #FF00E4;
 }
 
 /* Botão de rolagem */
 .botao-rolagem {
-    position: fixed; /* Mantém o botão fixo na tela */
-    bottom: 20px; /* Distância da parte inferior */
-    right: 20px; /* Distância da lateral direita */
-    width: 50px; /* Largura */
-    height: 50px; /* Altura */
-    background-color: #30475E; /* Cor de fundo */
-    color: #fff; /* Cor do ícone/texto */
-    border: none; /* Remove bordas */
-    border-radius: 50%; /* Forma circular */
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Sombra */
-    cursor: pointer; /* Indica clicável */
-    font-size: 24px; /* Tamanho do ícone/texto */
-    display: none; /* Esconde o botão inicialmente */
-    z-index: 100; /* Fica acima de outros elementos */
-    transition: opacity 0.3s ease, transform 0.3s ease;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  background: #00D4FF;
+  color: #0A0F24;
+  border: none;
+  border-radius: 50%;
+  box-shadow: 0 4px 8px rgba(0, 212, 255, 0.3);
+  cursor: pointer;
+  font-size: 24px;
+  transition: all 0.3s ease;
 }
 
 .botao-rolagem:hover {
-    background-color: #23c483; /* Cor ao passar o mouse */
-    transform: scale(1.1); /* Leve aumento no hover */
+  background: #FF00E4;
+  transform: scale(1.1);
 }
 
-.imagem-topico {
-    width: 150px; /* Ajuste o tamanho da imagem */
-    height: auto; /* Mantém a proporção */
-    float: left; /* Alinha a imagem à esquerda */
-    margin-right: 20px; /* Espaçamento entre a imagem e o texto */
-    margin-bottom: 10px; /* Espaçamento abaixo da imagem */
-    border-radius: 10px; /* Bordas arredondadas */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra suave */
+/* Animações */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .navbar {
+    flex-wrap: wrap;
+  }
+
+  .nav-links {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .nav-links li {
+    margin: 1rem 0;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  header {
+    padding: 3rem 1rem;
+  }
+
+  header h1 {
+    font-size: 2rem;
+  }
+
+  .form-pesquisa {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .input-wrapper {
+    width: 100%;
+  }
+
+  .resultados-pesquisa {
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .card-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .item-resultado h2 {
+    font-size: 1.5rem;
+  }
 }
